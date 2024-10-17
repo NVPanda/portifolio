@@ -8,38 +8,49 @@
 </head>
 <body class="light">
   <header class="p-5 bg-red-600 text-white flex justify-between items-center">
-    <nav class="flex space-x-4">
-      <a href="home.html" class="nav-button">Home</a>
-      <a href="about.html" class="nav-button">About</a>
-      <a href="contact.html" class="nav-button">Contact</a>
-    </nav>
-    <div class="lang-button">
-      <img src="flags/brazil.png" alt="PT-BR" class="flag">
-      <img src="flags/usa.png" alt="EN-US" class="flag">
-      <img src="flags/uk.png" alt="EN-EN" class="flag">
+    <div class="flex items-center">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav id="menu" class="menu lg:flex space-x-4">
+        <a href="home.html" class="nav-button">Home</a>
+        <a href="about.html" class="nav-button">About</a>
+        <a href="contact.html" class="nav-button">Contact</a>
+      </nav>
     </div>
-  </header>  
+    <div class="flex items-center">
+      <div class="lang-button flex">
+        <img src="flags/brazil.png" alt="PT-BR" class="flag">
+        <img src="flags/usa.png" alt="EN-US" class="flag">
+        <img src="flags/uk.png" alt="EN-EN" class="flag">
+      </div>
+      <button id="theme-toggle" class="nav-button ml-4">🌞</button>
+    </div>
+  </header>
 
   <!-- Conteúdo da página -->
-  <section class="flex flex-wrap justify-center mt-10">
-    <div class="card">
-      <h2 class="text-2xl mb-2">Card Title</h2>
-      <p>Card content goes here...</p>
-    </div>
-    <div class="card">
-      <h2 class="text-2xl mb-2">Card Title</h2>
-      <p>Card content goes here...</p>
-    </div>
-  </section>
-
-  <section class="carousel mt-10 p-5">
-    <img src="image1.jpg" alt="Image 1">
-    <img src="image2.jpg" alt="Image 2">
-    <img src="image3.jpg" alt="Image 3">
-  </section>
 
   <footer class="footer mt-10">
     <p>NVPanda, Desenvolvedor © <script>document.write(new Date().getFullYear());</script></p>
   </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const menu = document.getElementById('menu');
+    
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
+    });
+
+    function toggleMenu() {
+      menu.classList.toggle('open');
+    }
+    
+    // Initial Theme Setting
+    if (document.body.classList.contains('dark')) {
+      themeToggle.textContent = '🌙';
+    } else {
+      themeToggle.textContent = '🌞';
+    }
+  </script>
 </body>
 </html>

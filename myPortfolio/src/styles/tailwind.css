@@ -1,39 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  body {
-    @apply bg-red-200 text-gray-800; /* Light mode */
-  }
-}
-
-@layer base.dark {
-  body {
-    @apply bg-black text-white; /* Dark mode */
-  }
-}
-
-@layer components {
-  .nav-button {
-    @apply bg-red-500 text-white rounded-full px-4 py-2 mx-2;
-  }
-  .lang-button {
-    @apply bg-gray-300 text-black rounded-lg w-20 h-20 flex items-center justify-center;
-  }
-  .flag {
-    @apply w-5 h-5 mx-1;
-  }
-  .card {
-    @apply bg-white bg-opacity-50 p-5 m-4 rounded-lg shadow-lg;
-  }
-  .carousel {
-    @apply flex space-x-4 overflow-x-auto;
-  }
-  .carousel img {
-    @apply w-64 h-64 object-cover rounded-lg;
-  }
-  .footer {
-    @apply bg-gray-900 text-gray-100 p-5 text-center;
-  }
-}

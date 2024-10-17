@@ -4,22 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles.css" rel="stylesheet">
-  <title>About</title>
+  <title>About me</title>
 </head>
 <body class="light">
-  <header class="p-5 bg-red-600 text-white text-center">
-    <h1>About NVPanda</h1>
+  <header class="p-5 bg-red-600 text-white flex justify-between items-center">
+    <div class="flex items-center">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav id="menu" class="menu lg:flex space-x-4">
+        <a href="home.html" class="nav-button">Home</a>
+        <a href="about.html" class="nav-button">About</a>
+        <a href="contact.html" class="nav-button">Contact</a>
+      </nav>
+    </div>
+    <div class="flex items-center">
+      <div class="lang-button flex">
+        <img src="flags/brazil.png" alt="PT-BR" class="flag">
+        <img src="flags/usa.png" alt="EN-US" class="flag">
+        <img src="flags/uk.png" alt="EN-EN" class="flag">
+      </div>
+      <button id="theme-toggle" class="nav-button ml-4">🌞</button>
+    </div>
   </header>
   
   <section class="flex flex-wrap justify-center mt-10">
     <div class="card">
       <h2 class="text-2xl mb-2">Who am I?</h2>
-      <p>Details about NVPanda...</p>
+      <p>Romancista da tecnologia, tem gosto em aprender novas tecnologias, novas habilidades práticas, sonha em trabalhar na Google Inc. / NASA / SpaceX / Microsoft, sonha em conhecer o Linus Torvalds e aprender sobre Linux com ele.</p>
+      <p>Empenhado em alguns projetos tanto pessoais, quanto em equipes distintas, fortalecendo o conhecimento, a técnicas e ajudando iniciantes da área a conquistar um lugar no mercado.</p>
     </div>
   </section>
   
   <footer class="footer mt-10">
     <p>NVPanda, Desenvolvedor © <script>document.write(new Date().getFullYear());</script></p>
   </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const menu = document.getElementById('menu');
+    
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
+    });
+
+    function toggleMenu() {
+      menu.classList.toggle('open');
+    }
+    
+    // Initial Theme Setting
+    if (document.body.classList.contains('dark')) {
+      themeToggle.textContent = '🌙';
+    } else {
+      themeToggle.textContent = '🌞';
+    }
+  </script>
 </body>
 </html>
